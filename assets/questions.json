@@ -1,0 +1,67 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the capital of France?",
+    "options": ["Paris", "London", "Berlin", "Rome"],
+    "answerIndex": 0
+  },
+  {
+    "id": "q2",
+    "question": "Which language is used for Flutter development?",
+    "options": ["Java", "Kotlin", "Dart", "Swift"],
+    "answerIndex": 2
+  },
+  {
+    "id": "q3",
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "answerIndex": 1
+  },
+  {
+    "id": "q4",
+    "question": "Which data structure uses LIFO?",
+    "options": ["Queue", "Stack", "LinkedList", "Tree"],
+    "answerIndex": 1
+  },
+  {
+    "id": "q5",
+    "question": "HTTP stands for?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "HyperText Transmission Protocol",
+      "High Transfer Text Protocol",
+      "HyperText Transfer Program"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "q6",
+    "question": "Which company developed the React library?",
+    "options": ["Google", "Facebook", "Microsoft", "Apple"],
+    "answerIndex": 1
+  },
+  {
+    "id": "q7",
+    "question": "Which operator is used for assignment in many languages?",
+    "options": ["==", "=", "=>", "==="],
+    "answerIndex": 1
+  },
+  {
+    "id": "q8",
+    "question": "In Flutter, what widget is used for immutable configuration?",
+    "options": ["StatefulWidget", "StatelessWidget", "InheritedWidget", "StreamBuilder"],
+    "answerIndex": 1
+  },
+  {
+    "id": "q9",
+    "question": "Which HTML tag is used for the largest heading?",
+    "options": ["<h1>", "<h6>", "<head>", "<title>"],
+    "answerIndex": 0
+  },
+  {
+    "id": "q10",
+    "question": "Which one is a NoSQL database?",
+    "options": ["PostgreSQL", "MySQL", "MongoDB", "SQLite"],
+    "answerIndex": 2
+  }
+]
