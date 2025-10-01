@@ -2,13 +2,15 @@ import 'package:equatable/equatable.dart';
 import 'package:quiz_app/features/quiz/data/models/questions_model.dart';
 import 'package:quiz_app/features/quiz/data/models/user_answer.dart';
 
+enum RequestStatus { init, loading, loaded, error }
+
 class QuizState extends Equatable {
   final List<Question> questions;
   final List<UserAnswer> userAnswers;
   final int currentQuestionIndex;
   final int score;
   final bool quizCompleted;
-  final bool isLoading;
+  final RequestStatus status ;
   final String? error;
 
   const QuizState({
@@ -17,7 +19,7 @@ class QuizState extends Equatable {
     this.currentQuestionIndex = 0,
     this.score = 0,
     this.quizCompleted = false,
-    this.isLoading = false,
+    this.status = RequestStatus.init,
     this.error,
   });
 
@@ -27,7 +29,7 @@ class QuizState extends Equatable {
     int? currentQuestionIndex,
     int? score,
     bool? quizCompleted,
-    bool? isLoading,
+    RequestStatus? status,
     String? error,
   }) {
     return QuizState(
@@ -36,7 +38,7 @@ class QuizState extends Equatable {
       currentQuestionIndex: currentQuestionIndex ?? this.currentQuestionIndex,
       score: score ?? this.score,
       quizCompleted: quizCompleted ?? this.quizCompleted,
-      isLoading: isLoading ?? this.isLoading,
+      status: status ?? this.status,
       error: error ?? this.error,
     );
   }
@@ -48,20 +50,21 @@ class QuizState extends Equatable {
         currentQuestionIndex,
         score,
         quizCompleted,
-        isLoading,
+        status,
         error,
       ];
 
-  Question? get currentQuestion =>
-      currentQuestionIndex < questions.length ? questions[currentQuestionIndex] : null;
+  Question? get currentQuestion => currentQuestionIndex < questions.length
+      ? questions[currentQuestionIndex]
+      : null;
 
-      String? getSelectedAnswerForQuestion(int questionId) {
-        try {
-          final answer = userAnswers.firstWhere((ua) => ua.questionId == questionId);
-          return answer.selectedAnswer.isNotEmpty ? answer.selectedAnswer : null;
-        } catch (e) {
-          return null;
-        }
-      }
-      
+  String? getSelectedAnswerForQuestion(int questionId) {
+    try {
+      final answer =
+          userAnswers.firstWhere((ua) => ua.questionId == questionId);
+      return answer.selectedAnswer.isNotEmpty ? answer.selectedAnswer : null;
+    } catch (e) {
+      return null;
+    }
+  }
 }
