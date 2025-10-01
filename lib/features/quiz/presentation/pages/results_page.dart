@@ -16,7 +16,7 @@ class ResultsPage extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
         body: BlocBuilder<QuizCubit, QuizState>(builder: (context, state) {
-          if (state.isLoading) {
+          if (state.status == RequestStatus.loading) {
             return const Center(
                 child: CircularProgressIndicator(
               color: Colors.blue,
